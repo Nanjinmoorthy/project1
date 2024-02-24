@@ -1,0 +1,28 @@
+<head>
+    <link rel="stylesheet" href="hstyle.css">
+</head>
+<div class="i1">
+    <h1 class="head">Guess the Number from 1 to 10</h1>
+    <input type="number" id="i1" class="i2" placeholder="Enter your number" >
+    <button onclick="call()" class="i3">Check</button>
+    <p id="para" class="i4">You are Right/Wrong</p>
+</div>
+
+
+
+<script>
+    var a=Math.random()
+    var b=document.getElementById("i1")
+    var c=document.getElementById("para")
+    var d=Math.floor((a*10)+1)
+    console.log(d)
+    function call(){    
+    if(d==b.value){
+        c.textContent="Hey, You Won the game"
+        alert("You Won")
+    }
+    else{
+        c.textContent="OOPS! You are Wrong"
+    }
+}
+</script>

@@ -1,0 +1,39 @@
+*{
+    background:black;
+}
+
+.i1{
+    
+    padding:195px;
+    margin-left: 370px;
+}
+.head{
+    color:orange;
+    font-family:'Times New Roman', Times, serif;
+}
+.i2{
+    width:350px;
+    position:relative;
+    padding: 12px;
+    text-align: center;
+    color:white;
+    border-color: white;
+    margin-top: 20px;
+}
+.i3{
+    padding: 12px;
+    margin-left: 24px;
+    border-color: white;
+    color: white;
+    margin-top: 20px;
+}
+.i4{
+    color:orange;
+    text-align: center;
+    margin-right: 365px;
+    margin-top: 40px;
+    font-size: 25px;
+}
+.i3:hover{
+    color:orange;
+}

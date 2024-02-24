@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather app</title>
+        <link rel="stylesheet" href="wstyle.css">
+    </head>
+    <body>
+        <div class="home">
+            <h1 class="he">WEATHER REPORT</h1>
+        </div>
+        <div class="card">
+            <div class="search">
+                <input type="text" placeholder="Enter your city name" spellcheck="false">
+                <button><img src="data:image/png;base64,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">
+                </button>
+            </div>
+            <div class="weather">
+                <img src="https://img.freepik.com/premium-photo/3d-cloudy-sun-rain-icon-know-weather-application-web_494516-2102.jpg" class="weather-icon">
+                <h1 class="temp">22°c</h1>
+                <h2 class="city">New York</h2>
+            </div>
+        </div>
+        <script>
+            const apiKey="863242cfb2b1d357e6093d9a4df19a4b";
+            const apiUrl="https://api.openweathermap.org/data/2.5/weather?units=metric&q=bangalore";
+
+            async function checkWeather(){
+                const response=await fetch(apiUrl + '&appid=${apiKey}');
+                var data=await response.json();
+
+                console.log(data);
+
+                document.querySelector(".city").innerHTML=data.name;
+                document.querySelector(".temp").innerHTML=data.main.temp;
+            }
+            checkWeather();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+from flask import Flask, render_template, request, redirect
+import mysql.connector
+
+app = Flask(__name__)
+
+# Database connection
+db = mysql.connector.connect(
+    host="your_mysql_host",
+    user="your_mysql_user",
+    password="your_mysql_password",
+    database="your_database_name"
+)
+
+cursor = db.cursor()
+
+# Landing page
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+# Registration page
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        name = request.form['name']
+        contact = request.form['contact']
+        
+        # Insert user into the database
+        cursor.execute("INSERT INTO users (name, contact) VALUES (%s, %s)", (name, contact))
+        db.commit()
+
+        return redirect('/')
+
+    return render_template('register.html')
+
+# Attendance tracking page
+@app.route('/track_attendance', methods=['GET', 'POST'])
+def track_attendance():
+    if request.method == 'POST':
+        user_id = request.form['user_id']
+        bus_id = request.form['bus_id']
+        
+        # Insert attendance record
+        cursor.execute("INSERT INTO attendance (user_id, bus_id) VALUES (%s, %s)", (user_id, bus_id))
+        db.commit()
+
+        return redirect('/')
+
+    # Fetch user and bus information for the dropdowns
+    cursor.execute("SELECT * FROM users")
+    users = cursor.fetchall()
+
+    cursor.execute("SELECT * FROM buses")
+    buses = cursor.fetchall()
+
+    return render_template('track_attendance.html', users=users, buses=buses)
+
+if __name__ == '_main_':
+    app.run(debug=True)
